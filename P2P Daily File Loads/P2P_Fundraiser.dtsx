@@ -1,0 +1,3582 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/11/2024 9:19:44 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="PRDENTEPCRDS01"
+  DTS:CreatorName="ROOT\marmarw-adm"
+  DTS:DTSID="{C55CE908-AA5B-4172-AB1B-E66F6F81824F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="P2P_Fundraiser"
+  DTS:PackageType="5"
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{399D3D51-A513-4CE6-9897-1F2256F8BC91}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager - One Time 1x]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{538F89A4-9DBF-489B-A349-80D9258F5D15}"
+      DTS:ObjectName="Flat File Connection Manager - One Time 1x">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::CurrentFile]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="New_P2P_Fundraiser_export_*.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fundraiser ID"
+              DTS:DTSID="{F29FB8F7-BC2C-498D-9A1E-684FBB1D6334}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fundraiser Name"
+              DTS:DTSID="{9B96C26B-E034-4BA2-9697-EAC02809831C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fundraiser Creation Date"
+              DTS:DTSID="{CB5A48CD-14D8-4D73-8930-95418302159E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fundraiser Goal Amount in USD"
+              DTS:DTSID="{768372FE-9DA7-4429-9BEA-34A53FAC814D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fundraiser Share Link"
+              DTS:DTSID="{90981A38-6EE1-46FC-BD6B-280E489E70C8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fundraiser Goal Amount"
+              DTS:DTSID="{6ABDFED3-A8FA-429A-A049-B10123C02FDA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fundraiser Goal Currency"
+              DTS:DTSID="{26548884-A15E-46AA-9843-FC776B57806E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fundraiser End Date"
+              DTS:DTSID="{734CAD4D-3EBD-409C-A49F-FB3290D878EE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fundraiser Personal Message"
+              DTS:DTSID="{6997725E-F3EA-47BF-9727-B6B63BB4B47A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fundraiser Creation Page URL"
+              DTS:DTSID="{B6FC5446-4F5B-4A75-A8C1-1854D59181E7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fundraiser Total Raised"
+              DTS:DTSID="{112CC54F-1351-4DFB-83BB-E23B1F3D9683}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fundraiser Total Raised in USD"
+              DTS:DTSID="{7FD79C34-DEA2-41BE-989F-0AA9505719FF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Campaign ID"
+              DTS:DTSID="{D10AD319-DD9F-4CF7-90B0-A10A75BE25C6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Campaign Code"
+              DTS:DTSID="{CC87B256-9AD6-443D-ADF0-3E5289A06DEE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Campaign Name"
+              DTS:DTSID="{AE4B943B-D069-48E1-BC7D-B5E322BF2F33}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Supporter Full Name"
+              DTS:DTSID="{1F658C08-B0CB-43A8-81F0-29BCE2AA8F05}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Supporter First Name"
+              DTS:DTSID="{6685592B-B9D5-4A00-86C6-DE9C46012B4A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Supporter Last Name"
+              DTS:DTSID="{1469B2B4-252F-4439-9A91-1C66B3F114AC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Supporter Email"
+              DTS:DTSID="{1DE680B7-02DD-4F03-A470-D251B7939E6D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Supporter ID"
+              DTS:DTSID="{4B9C0EC3-9DF0-462C-8471-B8E2B665A705}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Account ID"
+              DTS:DTSID="{7066DDE8-C094-4F69-99B2-06B2AB683E87}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Account Code"
+              DTS:DTSID="{7B1ACFE0-F2DD-4768-A989-9DEA55D5699F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Account Name"
+              DTS:DTSID="{039A30AA-AA02-4AC0-82F6-4ED226C53953}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager - OneTime]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{9344C943-C8D3-41DA-A40C-AD435CA0314C}"
+      DTS:ObjectName="Flat File Connection Manager - OneTime">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::CurrentFile]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="New_P2P_Fundraiser_export_*.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Campaign ID"
+              DTS:DTSID="{F3883674-3B33-42D9-B012-9B76BBD08115}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Campaign Code"
+              DTS:DTSID="{C7BB399A-7B8B-4477-B829-5AFC7134EE3D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Campaign Name"
+              DTS:DTSID="{2050F0BE-2BB6-4E2B-83A9-1059B227725C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Account ID"
+              DTS:DTSID="{D9DB4BF2-4379-43B2-8C76-29265FA62A83}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Account Code"
+              DTS:DTSID="{B3C4063E-D976-461B-9D2C-320219088587}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Account Name"
+              DTS:DTSID="{18570DA9-41BD-4F24-98ED-7E18B80A50A3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Account Default Currency"
+              DTS:DTSID="{5D354033-AEE6-42C6-8AD5-6DD8C002E311}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Created By User ID"
+              DTS:DTSID="{414168B3-20EA-4AC8-8658-D6C83B737042}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Created By User First Name"
+              DTS:DTSID="{749C6680-B16B-4063-82B6-F2F6C8CE9019}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Created By User Last Name"
+              DTS:DTSID="{328FD2B2-5D30-46D1-A674-097CC69F109F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Created By User Email"
+              DTS:DTSID="{8FCC4256-C205-4234-9267-9BFE07D2BB58}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Designation ID"
+              DTS:DTSID="{59EEF20C-2D60-4D47-A5F2-C324E91D5F1E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Designation Code"
+              DTS:DTSID="{679906EF-6C7B-4D3B-AFC1-ECBEBEBE995C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Designation Name"
+              DTS:DTSID="{EE54F775-0EAF-41C9-8785-6920C929859E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Donation ID"
+              DTS:DTSID="{4809AC40-D0E6-44B5-9885-1C0F3C782EC2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Donation Status"
+              DTS:DTSID="{B6058605-1FDD-46CA-AA14-FC7065A2EE6A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Is Live"
+              DTS:DTSID="{D87496A9-B2AE-41D8-A193-F9E8D6CB5903}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Donation Frequency"
+              DTS:DTSID="{344FD203-6675-4277-B015-64A785CF5096}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Donation Currency"
+              DTS:DTSID="{741BBB84-5FB0-45C1-A7A5-535F6C18E842}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Converted Donation Amount (USD)"
+              DTS:DTSID="{8DE3BEC2-B6DF-4B18-BEDB-2D33427189F0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Donation Amount"
+              DTS:DTSID="{854B5849-EB5D-4465-A759-55ED7E62CF80}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Converted Donation Amount Before Fees Covered Option (USD)"
+              DTS:DTSID="{B8EF53EB-ED51-4AA7-BAB7-D0092F0257FF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Donation Amount Before Fees Covered"
+              DTS:DTSID="{2A314B98-0E73-42FE-A66B-71645376248E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Converted Payout Amount (USD)"
+              DTS:DTSID="{11A59E56-A8E2-4274-A8A2-2AD4B81D0913}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Donation Payout Amount"
+              DTS:DTSID="{9C95D8C9-CBA1-4438-BDB1-9E154370A24E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Donation Payout Currency"
+              DTS:DTSID="{D40264E2-72DC-427F-8427-2F54BCE96473}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Converted Payment Processing Fee (USD)"
+              DTS:DTSID="{F0A95868-8D45-49A4-86A8-DF54803A0528}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Payment Processing Fee"
+              DTS:DTSID="{C08911AD-4569-48FD-884F-875BDE0406A4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Payment Processing Fee Currency"
+              DTS:DTSID="{DED1F5FF-EF05-4D23-84F3-CCFF683AB361}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Converted Platform Fee (USD)"
+              DTS:DTSID="{01E18244-DAC0-4AF0-A4A5-93C229DE4759}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Donation Platform Fee"
+              DTS:DTSID="{210D07A4-2141-4A14-806E-3BE5703580E0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Donation Platform Fee Currency"
+              DTS:DTSID="{F365FF12-7753-4A75-8F0C-1DB58027B8EE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Refunded Platform Fee"
+              DTS:DTSID="{9489BECE-157C-4A18-B19F-D1CD93CE7300}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Supporter Covered Fee"
+              DTS:DTSID="{51F534A0-1C2F-4322-853B-52654F2A4414}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Converted Refund Amount (USD)"
+              DTS:DTSID="{5677704D-38F1-42BC-A95E-A89DCDFA46E8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Refund Amount"
+              DTS:DTSID="{1012DCD8-EAB0-4D7D-980F-B0818513F2C9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Refund Amount Currency"
+              DTS:DTSID="{F5A8D5CB-5C7C-4B77-8F79-F59DF7272C90}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Refund Date"
+              DTS:DTSID="{E75241DB-BC23-4454-8D20-0D0675A17A9B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="2000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Donation Page URL"
+              DTS:DTSID="{3515B2C0-8573-4B2C-B11E-730842DD59A8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Donation Comment"
+              DTS:DTSID="{C2A68754-0158-4258-BAE9-27F354C22E15}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Donation Date"
+              DTS:DTSID="{D260A0E4-CD4D-41F7-8714-DD2BE8B63050}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Success Date"
+              DTS:DTSID="{1001F6E1-5DAE-4ED1-9B73-3C0596B074CB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Failed Date"
+              DTS:DTSID="{A602D25C-6A8D-48A2-83A5-4F7482079E8F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Is Recurring Donation"
+              DTS:DTSID="{45951FB2-8E47-40BE-B3C8-47680C94ABDC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Recurring ID"
+              DTS:DTSID="{E5CB319A-2710-41C2-B546-2A37991DFDEA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Recurring Began"
+              DTS:DTSID="{E9646F44-C9FB-4B69-B60F-F2AABA448EB4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Installment"
+              DTS:DTSID="{62558EB8-D2AE-4923-B710-7C74E4227E6C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Payment ID"
+              DTS:DTSID="{3AE836EF-8FA1-4FDC-AB5B-29442DD89CD2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Receipt ID"
+              DTS:DTSID="{0CD36D82-D19E-4893-BB11-0CDFFEE0A41A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PayPal Email"
+              DTS:DTSID="{78346714-F852-41EF-97D7-91AEFDD5C76E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Payment Processor"
+              DTS:DTSID="{A3060BEF-5204-4D5C-A2E3-656DFBE13081}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Payment Method"
+              DTS:DTSID="{B8B12052-D11A-4596-9932-BC246D8B9E38}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Bank Account"
+              DTS:DTSID="{F598033F-EE12-411A-ACBA-92F09D7C5A04}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Credit Card Type"
+              DTS:DTSID="{4E504E2F-9F69-4FC5-9263-627D7FCB384B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Credit Card Expiration Date"
+              DTS:DTSID="{B23B0284-526A-4EC8-B879-B41EB1B6651F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Credit Card Expiration Month"
+              DTS:DTSID="{820375B7-B3C9-45BB-BF3E-65658C725458}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Credit Card Expiration Year"
+              DTS:DTSID="{0E4F81DE-338B-4FE5-A054-7B3882ED7AD2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Credit Card Last 4"
+              DTS:DTSID="{B2A59742-5C9F-48F7-88CB-CCE377EFC562}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Donation Record URL"
+              DTS:DTSID="{E1696916-476A-4AC5-8405-511EB9E0D159}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Donation Source"
+              DTS:DTSID="{FE432F41-105F-4D30-95E9-10A1F7FF34B6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Element ID"
+              DTS:DTSID="{FAF6BDA9-7FD3-4220-AE5B-A8113498DFA0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Element Type"
+              DTS:DTSID="{51A6ACC1-389E-475C-97EE-C47E25ACA601}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Element Name"
+              DTS:DTSID="{DF4F3972-ED43-4852-AC78-FC82AA66D339}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tribute ID"
+              DTS:DTSID="{319729B6-74D3-43D8-9BEB-C0D662F301D4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tribute Type"
+              DTS:DTSID="{0BECE873-9833-47A2-9095-BB9757FA6343}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tribute Honoree"
+              DTS:DTSID="{6D33B27A-D438-4110-9203-E75ED5DEDFD0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tribute Message"
+              DTS:DTSID="{D0F97C6C-7260-41AD-B9E4-AD1BDEB57000}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tribute Hide Amount"
+              DTS:DTSID="{645E0969-BBBC-4E71-95A2-480A98DA2D8F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tribute Sharing"
+              DTS:DTSID="{52A52100-215B-4C8E-8A92-AB446875E232}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tribute Recipient First Name"
+              DTS:DTSID="{AC99CD03-785B-497E-B25A-09789FCEFF06}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tribute Recipient Last Name"
+              DTS:DTSID="{DBA0952C-DD58-42CE-80FB-65E2EF1508DE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tribute Email"
+              DTS:DTSID="{24C9D305-A814-4E49-AC8C-D7DDDB6978A9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tribute Address Line 1"
+              DTS:DTSID="{0DD76EC9-845D-4D82-99B4-610E18EE25DC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tribute Address Line 2"
+              DTS:DTSID="{C53F3DB7-D47C-4A07-9BB8-D71C1776B067}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tribute Address Line 1 and 2"
+              DTS:DTSID="{5438773C-A784-4F65-A214-895BB0D576FD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tribute City"
+              DTS:DTSID="{5E7087D8-3F2C-45DA-9D8D-14F0637A9EE9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tribute Zip Postal"
+              DTS:DTSID="{5D5A6A1F-D76F-4461-B473-A24EE3BF4658}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tribute State Region"
+              DTS:DTSID="{37757EB0-CC49-46CC-A488-7CFD9028AB3A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tribute Country Code"
+              DTS:DTSID="{ABE1ED6B-F68E-488D-BFBF-E1A3B357A336}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tribute Country"
+              DTS:DTSID="{82C5AB5D-C242-4ED5-955B-77AA9482E4CC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tribute From"
+              DTS:DTSID="{A3465912-4BC9-4A81-A093-2B454453CC3C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Supporter First Name"
+              DTS:DTSID="{83246C8C-7C89-4E7B-9097-4A59FEF4ECB6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Supporter Last Name"
+              DTS:DTSID="{407629F0-33E6-4347-9139-AA83988E8747}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Supporter Email"
+              DTS:DTSID="{CC8DB3EB-A0A4-465E-9E63-680CB31261D2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Supporter Phone Number"
+              DTS:DTSID="{104BC569-9CE7-4CA2-A9EA-322CF7523555}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Supporter Employer"
+              DTS:DTSID="{DF4E259C-7637-47CE-8FB5-3F61781E0DD8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="On Behalf Of"
+              DTS:DTSID="{F3A659FE-A459-43D6-846A-8BC4C7EFA83D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Mailing Address Line 1"
+              DTS:DTSID="{66E95863-F56F-4CFE-9980-D84D6F957EAB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Mailing Address Line 2"
+              DTS:DTSID="{34A2DEA3-D687-48AD-844E-BC623F319405}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Mailing Address Line 1 and 2"
+              DTS:DTSID="{6BE2259D-6AC3-4374-AC95-E0D31D4FFA87}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Mailing City"
+              DTS:DTSID="{3E4394CF-6BBE-4D28-8AA6-C216CFC3B992}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Mailing Zip Postal"
+              DTS:DTSID="{B64CFF5C-2B26-4EAF-B861-9B7B4F98D336}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Mailing State Region"
+              DTS:DTSID="{E8FC9200-4DA3-4E62-9AE9-D6AB8EA7038B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Mailing Country Code"
+              DTS:DTSID="{1BC44E38-7B61-4C0A-93B2-58708F85939B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Mailing Country"
+              DTS:DTSID="{95824DA8-1A47-43D5-90AA-D6381ADDFE83}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Supporter ID"
+              DTS:DTSID="{59E3271F-66F8-4B06-8DD1-065DDAA9221E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Supporter Language"
+              DTS:DTSID="{905E54E7-2F10-44E7-9CC6-FE1808178EE7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fundraiser ID"
+              DTS:DTSID="{7BD9A5C4-CF02-47E3-907E-2DBB7ECA8D54}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fundraiser Name"
+              DTS:DTSID="{A8E622C5-FA54-405F-B148-F4EAD5F00C16}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fundraiser Supporter Full Name"
+              DTS:DTSID="{48B2F34E-1D99-4D40-92F4-C7D45A8527B5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fundraiser Supporter First Name"
+              DTS:DTSID="{B506E938-48CB-4027-B295-DA48692120AB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fundraiser Supporter Last Name"
+              DTS:DTSID="{0278E6F1-BA22-4C65-9EE1-3CB0CE8C4C32}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fundraiser Supporter Email"
+              DTS:DTSID="{98FA10A9-2C08-44A0-BB88-F7B4F25CB4B9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fundraiser Supporter ID"
+              DTS:DTSID="{68FF2960-FF22-492C-8DAB-502604833F1A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Mailing List Subscribed"
+              DTS:DTSID="{5BFBA39C-A8CB-4C0A-8690-4F58B615120D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Terms"
+              DTS:DTSID="{09608464-EAE0-4D39-B345-7F1D318A86E1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Anonymous Donation"
+              DTS:DTSID="{0B65B8B5-9EF6-40A7-A835-1201D20342EC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Supporter IP Address"
+              DTS:DTSID="{2BAF138F-2820-488D-B909-04DC5F1C2A9F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Supporter IP Geolocation"
+              DTS:DTSID="{607F86E7-138D-490F-83C0-A97160DE4B6F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Supporter IP State Region"
+              DTS:DTSID="{30F77BBC-85EB-4C78-BE00-10BC7D29FF62}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Supporter IP City"
+              DTS:DTSID="{A2D01005-57FA-4164-8E71-D709DC0F485A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Supporter IP Country"
+              DTS:DTSID="{1F019D3D-428E-4B41-BE5B-06BBC92D412A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Latest Payment Error Message"
+              DTS:DTSID="{64F733E2-79D6-4A1B-94E1-871E5D9FD2A9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UTM Source"
+              DTS:DTSID="{EBC6F7FE-BAC9-4E9C-85AF-183099A7A8FA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UTM Campaign"
+              DTS:DTSID="{72F703AD-A0D6-42B9-AD69-1500DF068414}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UTM Term"
+              DTS:DTSID="{478BD00E-CADA-44A1-B636-B106B6FB8D6B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UTM Content"
+              DTS:DTSID="{4960981B-0492-4988-944E-7D5C0D1E2A22}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UTM Medium"
+              DTS:DTSID="{AEA893F0-0C3A-4A23-B0A4-74B3B3A137E8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SFMC JobID"
+              DTS:DTSID="{AFDA1625-CF6E-4ACC-B2F6-C8B50D0C952B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SFMC SubscriberID"
+              DTS:DTSID="{C04C7007-0ED3-42AE-BEAD-B64430D4A45C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SFMC ListID"
+              DTS:DTSID="{49D4246F-27A0-4687-BAC7-77E2E7A89887}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SFMC UrlID"
+              DTS:DTSID="{AA178CB5-5A42-4F2B-AE6C-5ECCA37CBD17}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SFMC MemberID"
+              DTS:DTSID="{4C1E3F0F-5B01-46C8-9356-73C580A5B78D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SFMC BatchID"
+              DTS:DTSID="{FBB3DE2A-32BC-46C3-8E45-88BCC642901C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FRU Appeal"
+              DTS:DTSID="{D9A68017-6C02-4314-8FCB-425503EB03B3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FRU Designation Name"
+              DTS:DTSID="{1BFEC022-EF0B-4C72-ACC6-DA746304EE33}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FRU Designation Code"
+              DTS:DTSID="{E60EF91A-860A-4771-B9C8-2A8A498603AD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Premium Item QK2GBBK2"
+              DTS:DTSID="{CD662EC8-A013-4833-BC66-D2B9463E7478}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Premium Item QSQPR38J"
+              DTS:DTSID="{1DEC068F-B450-45F6-AF03-49966C83E7DD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Premium Item Q9WEKA58"
+              DTS:DTSID="{2D687B06-CBD4-4C83-8414-120F779DE46D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Board Member Gift Restriction QXCQFFKY"
+              DTS:DTSID="{13F8E54C-B77B-4789-8769-0C9E68ACC0C4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Reference Line QAGY65E7"
+              DTS:DTSID="{6E179B70-52AB-48C2-9800-49055FE4D519}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Letter Code QMAD97VK"
+              DTS:DTSID="{FFCFFD96-86E2-485B-9071-B3F0CCF68680}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Lookup ID QZMUBQMS"
+              DTS:DTSID="{598005F9-2178-4344-BCF9-332F5023F3B9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Browser"
+              DTS:DTSID="{33053714-303D-4DBE-B158-75D615F4645F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Device"
+              DTS:DTSID="{A960FE6F-6A20-4D6C-8DBD-4AF1E52B7C7D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OS"
+              DTS:DTSID="{E91B4E3D-AA46-45EC-AC7B-69A4271401F0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="google_click"
+              DTS:DTSID="{6D63A270-7A0D-4667-83AE-50A25214D24A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="fb_click"
+              DTS:DTSID="{526738F8-DAE8-4BCF-A613-6E4E293FDB1D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="bing_click"
+              DTS:DTSID="{24FE678F-88F9-4E61-A1FE-41F84ADB7239}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[PRDENTETLDB01.BT_STAGE]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{7707F9F5-1FDA-4299-BBCE-FDDFE858B7B2}"
+      DTS:ObjectName="PRDENTETLDB01.BT_STAGE">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=PRDENTETLDB01;Initial Catalog=BT_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[PRDENTETLDB01.BT_STAGE 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{ECD6242B-7098-4725-960C-65946D697098}"
+      DTS:ObjectName="PRDENTETLDB01.BT_STAGE 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=PRDENTETLDB01;Initial Catalog=BT_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[PRDENTETLDB01.BT_STAGE 2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{123E6CF1-F14F-40FE-A1E7-11D59F33B1EE}"
+      DTS:ObjectName="PRDENTETLDB01.BT_STAGE 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=PRDENTETLDB01;Initial Catalog=BT_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2262BECD-C052-4B62-850E-E98979C1C1CD}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CurrentFile">
+      <DTS:VariableValue
+        DTS:DataType="8">New_P2P_Fundraiser_export_*.csv</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{94B372C7-B50B-4D20-9026-DD5E24BCDBFF}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="RootFolder">
+      <DTS:VariableValue
+        DTS:DataType="8">\\prdebsedi01.boystown.org\EDI\fundraise_up\in</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\last_update_date"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{90BCDFA6-E8F6-4D28-9377-5FBF154DC09D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="last_update_date"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{7707F9F5-1FDA-4299-BBCE-FDDFE858B7B2}"
+          SQLTask:SqlStatementSource="UPDATE  fundraiseup.P2P_Fundraiser&#xA;SET last_update_date = GETDATE()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\P2P Fundraiser File"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{39D16C08-D6CB-43E5-AEB1-6D008EC93754}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="P2P Fundraiser File"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\P2P Fundraiser File\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\P2P Fundraiser File\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager - One Time 1x]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager - One Time 1x]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Campaign ID]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Campaign ID]"
+                      length="500"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Campaign ID]"
+                      name="Campaign ID"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Campaign Code]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Campaign Code]"
+                      length="500"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Campaign Code]"
+                      name="Campaign Code"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Campaign Name]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Campaign Name]"
+                      length="500"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Campaign Name]"
+                      name="Campaign Name"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Account ID]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Account ID]"
+                      length="500"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Account ID]"
+                      name="Account ID"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Account Code]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Account Code]"
+                      length="500"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Account Code]"
+                      name="Account Code"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Account Name]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Account Name]"
+                      length="500"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Account Name]"
+                      name="Account Name"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Supporter First Name]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Supporter First Name]"
+                      length="500"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Supporter First Name]"
+                      name="Supporter First Name"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Supporter Last Name]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Supporter Last Name]"
+                      length="500"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Supporter Last Name]"
+                      name="Supporter Last Name"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Supporter Email]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Supporter Email]"
+                      length="500"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Supporter Email]"
+                      name="Supporter Email"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Supporter ID]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Supporter ID]"
+                      length="500"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Supporter ID]"
+                      name="Supporter ID"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser ID]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Fundraiser ID]"
+                      length="500"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser ID]"
+                      name="Fundraiser ID"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser Name]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Fundraiser Name]"
+                      length="500"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser Name]"
+                      name="Fundraiser Name"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser Creation Date]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Fundraiser Creation Date]"
+                      length="500"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser Creation Date]"
+                      name="Fundraiser Creation Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser Goal Amount in USD]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Fundraiser Goal Amount in USD]"
+                      length="500"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser Goal Amount in USD]"
+                      name="Fundraiser Goal Amount in USD"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser Share Link]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Fundraiser Share Link]"
+                      length="500"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser Share Link]"
+                      name="Fundraiser Share Link"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser Goal Amount]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Fundraiser Goal Amount]"
+                      length="500"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser Goal Amount]"
+                      name="Fundraiser Goal Amount"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser Goal Currency]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Fundraiser Goal Currency]"
+                      length="500"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser Goal Currency]"
+                      name="Fundraiser Goal Currency"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser End Date]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Fundraiser End Date]"
+                      length="500"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser End Date]"
+                      name="Fundraiser End Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser Personal Message]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Fundraiser Personal Message]"
+                      length="500"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser Personal Message]"
+                      name="Fundraiser Personal Message"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser Creation Page URL]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Fundraiser Creation Page URL]"
+                      length="500"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser Creation Page URL]"
+                      name="Fundraiser Creation Page URL"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser Total Raised]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Fundraiser Total Raised]"
+                      length="500"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser Total Raised]"
+                      name="Fundraiser Total Raised"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser Total Raised in USD]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Fundraiser Total Raised in USD]"
+                      length="500"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser Total Raised in USD]"
+                      name="Fundraiser Total Raised in USD"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Supporter Full Name]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Supporter Full Name]"
+                      length="500"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Supporter Full Name]"
+                      name="Supporter Full Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Campaign ID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Campaign ID" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Campaign Code]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Campaign Code" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Campaign Name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Campaign Name" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Account ID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Account ID" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Account Code]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Account Code" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Account Name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Account Name" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Supporter First Name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Supporter First Name" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Supporter Last Name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Supporter Last Name" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Supporter Email]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Supporter Email" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Supporter ID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Supporter ID" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Fundraiser ID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Fundraiser ID" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Fundraiser Name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Fundraiser Name" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Fundraiser Creation Date]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Fundraiser Creation Date" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Fundraiser Goal Amount in USD]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Fundraiser Goal Amount in USD" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Fundraiser Share Link]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Fundraiser Share Link" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Fundraiser Goal Amount]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Fundraiser Goal Amount" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Fundraiser Goal Currency]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Fundraiser Goal Currency" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Fundraiser End Date]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Fundraiser End Date" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Fundraiser Personal Message]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Fundraiser Personal Message" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Fundraiser Creation Page URL]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Fundraiser Creation Page URL" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Fundraiser Total Raised]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Fundraiser Total Raised" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Fundraiser Total Raised in USD]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Fundraiser Total Raised in USD" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Supporter Full Name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Supporter Full Name" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\P2P Fundraiser File\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[fundraiseup].[P2P_Fundraiser]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">65001</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\P2P Fundraiser File\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[PRDENTETLDB01.BT_STAGE 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[PRDENTETLDB01.BT_STAGE 2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Campaign ID]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Campaign ID"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Campaign ID]"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Campaign ID]" />
+                    <inputColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Campaign Code]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Campaign Code"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Campaign Code]"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Campaign Code]" />
+                    <inputColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Campaign Name]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Campaign Name"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Campaign Name]"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Campaign Name]" />
+                    <inputColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Account ID]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Account ID"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Account ID]"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Account ID]" />
+                    <inputColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Account Code]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Account Code"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Account Code]"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Account Code]" />
+                    <inputColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Account Name]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Account Name"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Account Name]"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Account Name]" />
+                    <inputColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Supporter First Name]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Supporter First Name"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Supporter First Name]"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Supporter First Name]" />
+                    <inputColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Supporter Last Name]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Supporter Last Name"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Supporter Last Name]"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Supporter Last Name]" />
+                    <inputColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Supporter Email]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Supporter Email"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Supporter Email]"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Supporter Email]" />
+                    <inputColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Supporter ID]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Supporter ID"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Supporter ID]"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Supporter ID]" />
+                    <inputColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Fundraiser ID]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Fundraiser ID"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fundraiser ID]"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser ID]" />
+                    <inputColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Fundraiser Name]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Fundraiser Name"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fundraiser Name]"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser Name]" />
+                    <inputColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Fundraiser Creation Date]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Fundraiser Creation Date"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fundraiser Creation Date]"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser Creation Date]" />
+                    <inputColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Fundraiser Goal Amount in USD]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Fundraiser Goal Amount in USD"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fundraiser Goal Amount in USD]"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser Goal Amount in USD]" />
+                    <inputColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Fundraiser Share Link]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Fundraiser Share Link"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fundraiser Share Link]"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser Share Link]" />
+                    <inputColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Fundraiser Goal Amount]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Fundraiser Goal Amount"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fundraiser Goal Amount]"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser Goal Amount]" />
+                    <inputColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Fundraiser Goal Currency]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Fundraiser Goal Currency"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fundraiser Goal Currency]"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser Goal Currency]" />
+                    <inputColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Fundraiser End Date]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Fundraiser End Date"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fundraiser End Date]"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser End Date]" />
+                    <inputColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Fundraiser Personal Message]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Fundraiser Personal Message"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fundraiser Personal Message]"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser Personal Message]" />
+                    <inputColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Fundraiser Creation Page URL]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Fundraiser Creation Page URL"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fundraiser Creation Page URL]"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser Creation Page URL]" />
+                    <inputColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Fundraiser Total Raised]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Fundraiser Total Raised"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fundraiser Total Raised]"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser Total Raised]" />
+                    <inputColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Fundraiser Total Raised in USD]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Fundraiser Total Raised in USD"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fundraiser Total Raised in USD]"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Fundraiser Total Raised in USD]" />
+                    <inputColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Supporter Full Name]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Supporter Full Name"
+                      externalMetadataColumnId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Supporter Full Name]"
+                      lineageId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output].Columns[Supporter Full Name]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Campaign ID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Campaign ID" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Campaign Code]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Campaign Code" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Campaign Name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Campaign Name" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Account ID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Account ID" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Account Code]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Account Code" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Account Name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Account Name" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Supporter First Name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Supporter First Name" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Supporter Last Name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Supporter Last Name" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Supporter Email]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Supporter Email" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Supporter ID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Supporter ID" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fundraiser ID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Fundraiser ID" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fundraiser Name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Fundraiser Name" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fundraiser Creation Date]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Fundraiser Creation Date" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fundraiser Goal Amount in USD]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Fundraiser Goal Amount in USD" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fundraiser Share Link]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Fundraiser Share Link" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fundraiser Goal Amount]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Fundraiser Goal Amount" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fundraiser Goal Currency]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Fundraiser Goal Currency" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fundraiser End Date]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Fundraiser End Date" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fundraiser Personal Message]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Fundraiser Personal Message" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fundraiser Creation Page URL]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Fundraiser Creation Page URL" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fundraiser Total Raised]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Fundraiser Total Raised" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fundraiser Total Raised in USD]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Fundraiser Total Raised in USD" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Supporter Full Name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Supporter Full Name" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[last_update_date]"
+                      dataType="dbTimeStamp"
+                      name="last_update_date" />
+                    <externalMetadataColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[date_sent_to_sfmc]"
+                      dataType="dbTimeStamp"
+                      name="date_sent_to_sfmc" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\P2P Fundraiser File\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\P2P Fundraiser File\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\P2P Fundraiser File\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\P2P Fundraiser File\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\P2P Fundraiser File.Paths[Flat File Source Output]"
+              endId="Package\P2P Fundraiser File\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\P2P Fundraiser File\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Script Task 1"
+      DTS:CreationName="Microsoft.ScriptTask"
+      DTS:Description="Script Task"
+      DTS:DTSID="{2DD5E25D-78E1-4944-BFB3-61CD43C40600}"
+      DTS:ExecutableType="Microsoft.ScriptTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Script Task 1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ScriptProject
+          Name="ST_57034e0c5ee045839786801086cfa8b0"
+          VSTAMajorVersion="15"
+          VSTAMinorVersion="0"
+          Language="CSharp"
+          ReadOnlyVariables="User::RootFolder"
+          ReadWriteVariables="User::CurrentFile">
+          <ProjectItem
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_57034e0c5ee045839786801086cfa8b0")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_57034e0c5ee045839786801086cfa8b0")]
+[assembly: AssemblyCopyright("Copyright @  2024")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Resources.resx"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></ProjectItem>
+          <ProjectItem
+            Name="ST_57034e0c5ee045839786801086cfa8b0.csproj"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8f068d04-98d7-4c9d-a861-fba535d8a154}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ST_57034e0c5ee045839786801086cfa8b0</RootNamespace>
+    <AssemblyName>ST_57034e0c5ee045839786801086cfa8b0</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptMain.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="ScriptTask" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
+        <Host Name="ScriptTask" GeneratedNamespace="$safeprojectname" IconIndex=""></Host>
+        <ProjectClient>
+          <HostIdentifier>SSIS_ST150</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></ProjectItem>
+          <ProjectItem
+            Name="ScriptMain.cs"
+            Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
+/* The Script Task allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services control flow. 
+ * 
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script task. */
+#endregion
+
+
+#region Namespaces
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Runtime;
+using System.Windows.Forms;
+#endregion
+
+
+namespace ST_57034e0c5ee045839786801086cfa8b0
+{
+    /// <summary>
+    /// ScriptMain is the entry point class of the script.  Do not change the name, attributes,
+    /// or parent of this class.
+    /// </summary>
+	[Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute]
+    public partial class ScriptMain : Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
+    {
+        #region Help:  Using Integration Services variables and parameters in a script
+        /* To use a variable in this script, first ensure that the variable has been added to 
+         * either the list contained in the ReadOnlyVariables property or the list contained in 
+         * the ReadWriteVariables property of this script task, according to whether or not your
+         * code needs to write to the variable.  To add the variable, save this script, close this instance of
+         * Visual Studio, and update the ReadOnlyVariables and 
+         * ReadWriteVariables properties in the Script Transformation Editor window.
+         * To use a parameter in this script, follow the same steps. Parameters are always read-only.
+         * 
+         * Example of reading from a variable:
+         *  DateTime startTime = (DateTime) Dts.Variables["System::StartTime"].Value;
+         * 
+         * Example of writing to a variable:
+         *  Dts.Variables["User::myStringVariable"].Value = "new value";
+         * 
+         * Example of reading from a package parameter:
+         *  int batchId = (int) Dts.Variables["$Package::batchId"].Value;
+         *  
+         * Example of reading from a project parameter:
+         *  int batchId = (int) Dts.Variables["$Project::batchId"].Value;
+         * 
+         * Example of reading from a sensitive project parameter:
+         *  int batchId = (int) Dts.Variables["$Project::batchId"].GetSensitiveValue();
+         * */
+
+        #endregion
+
+        #region Help:  Firing Integration Services events from a script
+        /* This script task can fire events for logging purposes.
+         * 
+         * Example of firing an error event:
+         *  Dts.Events.FireError(18, "Process Values", "Bad value", "", 0);
+         * 
+         * Example of firing an information event:
+         *  Dts.Events.FireInformation(3, "Process Values", "Processing has started", "", 0, ref fireAgain)
+         * 
+         * Example of firing a warning event:
+         *  Dts.Events.FireWarning(14, "Process Values", "No values received for input", "", 0);
+         * */
+        #endregion
+
+        #region Help:  Using Integration Services connection managers in a script
+        /* Some types of connection managers can be used in this script task.  See the topic 
+         * "Working with Connection Managers Programatically" for details.
+         * 
+         * Example of using an ADO.Net connection manager:
+         *  object rawConnection = Dts.Connections["Sales DB"].AcquireConnection(Dts.Transaction);
+         *  SqlConnection myADONETConnection = (SqlConnection)rawConnection;
+         *  //Use the connection in some code here, then release the connection
+         *  Dts.Connections["Sales DB"].ReleaseConnection(rawConnection);
+         *
+         * Example of using a File connection manager
+         *  object rawConnection = Dts.Connections["Prices.zip"].AcquireConnection(Dts.Transaction);
+         *  string filePath = (string)rawConnection;
+         *  //Use the connection in some code here, then release the connection
+         *  Dts.Connections["Prices.zip"].ReleaseConnection(rawConnection);
+         * */
+        #endregion
+
+
+        /// <summary>
+        /// This method is called when this script task executes in the control flow.
+        /// Before returning from this method, set the value of Dts.TaskResult to indicate success or failure.
+        /// To open Help, press F1.
+        /// </summary>
+
+        public void Main()
+        {
+            string fileMask = "New_P2P_Fundraiser_export_*.csv";
+            string mostRecentFile = string.Empty;
+            string rootFolder = string.Empty;
+
+            // Assign values from the DTS variables collection.
+            // This is case sensitive. User:: is not required
+            // but you must convert it from the Object type to a strong type
+            rootFolder = Dts.Variables["User::RootFolder"].Value.ToString();
+
+            // Repeat the above pattern to assign a value to fileMask if you wish
+            // to make it a more flexible approach
+
+            // Determine the most recent file, this could be null
+            System.IO.FileInfo candidate = ScriptMain.GetLatestFile(rootFolder, fileMask);
+
+            if (candidate != null)
+            {
+                mostRecentFile = candidate.FullName;
+            }
+
+            // Push the results back onto the variable
+            Dts.Variables["CurrentFile"].Value = mostRecentFile;
+
+            Dts.TaskResult = (int)ScriptResults.Success;
+        }
+
+        /// <summary>
+        /// Find the most recent file matching a pattern
+        /// </summary>
+        /// <param name="directoryName">Folder to begin searching in</param>
+        /// <param name="fileExtension">Extension to search, e.g. *.csv</param>
+        /// <returns></returns>
+        private static System.IO.FileInfo GetLatestFile(string directoryName, string fileExtension)
+        {
+            System.IO.DirectoryInfo directoryInfo = new System.IO.DirectoryInfo(directoryName);
+
+            System.IO.FileInfo mostRecent = null;
+
+            // Change the SearchOption to AllDirectories if you need to search subfolders
+            System.IO.FileInfo[] legacyArray = directoryInfo.GetFiles(fileExtension, System.IO.SearchOption.TopDirectoryOnly);
+            foreach (System.IO.FileInfo current in legacyArray)
+            {
+                if (mostRecent == null)
+                {
+                    mostRecent = current;
+                }
+
+                if (current.LastWriteTimeUtc >= mostRecent.LastWriteTimeUtc)
+                {
+                    mostRecent = current;
+                }
+            }
+
+            return mostRecent;
+
+
+        }
+        #region ScriptResults declaration
+        /// <summary>
+        /// This enum provides a convenient shorthand within the scope of this class for setting the
+        /// result of the script.
+        /// 
+        /// This code was generated automatically.
+        /// </summary>
+        enum ScriptResults
+        {
+            Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success,
+            Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
+        };
+        #endregion
+    }
+}]]></ProjectItem>
+          <ProjectItem
+            Name="Project"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>ST_57034e0c5ee045839786801086cfa8b0</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>ST_57034e0c5ee045839786801086cfa8b0</msb:DisplayName>
+    <msb:ProjectId>{DEC8A357-BA78-481D-A861-5412778A1A47}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="ST_57034e0c5ee045839786801086cfa8b0.csproj" />
+    <msb:File Include="Properties\Settings.settings" />
+    <msb:File Include="Properties\AssemblyInfo.cs" />
+    <msb:File Include="Properties\Resources.resx" />
+    <msb:File Include="Properties\Resources.Designer.cs" />
+    <msb:File Include="Properties\Settings.Designer.cs" />
+    <msb:File Include="ScriptMain.cs" />
+  </msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Settings.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_57034e0c5ee045839786801086cfa8b0.Properties.Settings.get_Default():ST_57034e0c5ee045839786801086cfa8b0.Properties.Sett" +
+    "ings")]
+
+namespace ST_57034e0c5ee045839786801086cfa8b0.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Resources.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_57034e0c5ee045839786801086cfa8b0.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_57034e0c5ee045839786801086cfa8b0.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_57034e0c5ee045839786801086cfa8b0.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace ST_57034e0c5ee045839786801086cfa8b0.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ST_57034e0c5ee045839786801086cfa8b0.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}]]></ProjectItem>
+          <BinaryItem
+            Name="ST_57034e0c5ee045839786801086cfa8b0.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAMFL12YAAAAAAAAAAOAAIiALATAAABAAAAAIAAAAAAAAzi8A
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAHwvAABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAA1A8AAAAgAAAAEAAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAHgEAAAAQAAAAAYAAAASAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAGAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAACw
+LwAAAAAAAEgAAAACAAUAeCEAAEwNAAABAAAAAAAAAMQuAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAABMwAgBqAAAAAQAAEXIBAABwCn4QAAAKC34QAAAKJgIoEQAA
+Cm8SAAAKckEAAHBvEwAACm8UAAAKbxUAAAoGKAIAAAYMCCwHCG8WAAAKCwIoEQAACm8SAAAKcmMA
+AHBvEwAACgdvFwAACgIoEQAAChZvGAAACioAABMwAwA+AAAAAgAAEQJzGQAAChQKAxZvGgAACgsW
+DCsiBwiaDQYtAgkKCW8bAAAKBm8bAAAKKBwAAAosAgkKCBdYDAgHjmky2AYqHgIoHQAACioeAige
+AAAKKq5+AQAABC0ecnsAAHDQAwAAAigfAAAKbyAAAApzIQAACoABAAAEfgEAAAQqGn4CAAAEKh4C
+gAIAAAQqGn4DAAAEKh4CKCIAAAoqLnMJAAAGgAMAAAQqQlNKQgEAAQAAAAAADAAAAHY0LjAuMzAz
+MTkAAAAABQBsAAAAKAQAACN+AACUBAAAHAYAACNTdHJpbmdzAAAAALAKAADwAAAAI1VTAKALAAAQ
+AAAAI0dVSUQAAACwCwAAnAEAACNCbG9iAAAAAAAAAAIAAAFXHaIBCQMAAAD6ATMAFgAAAQAAACMA
+AAAFAAAABgAAAAoAAAADAAAAIgAAAAIAAAAQAAAAAgAAAAIAAAADAAAABAAAAAEAAAAEAAAAAQAA
+AAEAAAAAAOYDAQAAAAAABgB2AvcEBgAFA/cEBgDCAeQEDwBrBQAABgDvAXIEBgBZAnIEBgA6AnIE
+BgDsAnIEBgCWAnIEBgCvAnIEBgAGAnIEBgAhAj0DCgDKAn8DCgBBAX8DBgCRBC4ABgAeBBcEBgCl
+AeQEBgDnBRcEBgDHBBcFBgCaBF0EDgB1AdADDgDWAdADDgBdAUgEBgCKAfcEBgBZAxcECgC+A38D
+EgCtBewAEgCNAOwABgCmBC4ABgC1BC4ABgCEBC4ABgDjABcEBgAMARcEBgCWABcEBgANBnIEAAAA
+ACUAAAAAAAEAAQABABAALwQBADkAAQABAAAAEAAeBXoFSQABAAQAAAEQAMAFegVdAAMACAADAQAA
+2QUAAEEABAALABEAIwSZABEAMQGdABEAfQChAAYGVwClAFaAyQWoAFaAEQGoAFAgAAAAAIYANQQG
+AAEAyCAAAAAAkQC6AKwAAQASIQAAAACGGNcEBgADABohAAAAAIMY1wQGAAMAIiEAAAAAkwjDBLMA
+AwBOIQAAAACTCBkBuAADAFUhAAAAAJMIJQG9AAMAXSEAAAAAlgjuBcMABABkIQAAAACGGNcEBgAE
+AGwhAAAAAJEY3QTIAAQAAAABANUAAAACADoEAAABADcDCQDXBAEAEQDXBAYAGQDXBAoAKQDXBBAA
+MQDXBBAAOQDXBBAAQQDXBBAASQDXBBAAUQDXBBAAWQDXBBAAYQDXBBAAaQDXBAYAiQDXBAYAsQDX
+BBUAwQDXBAYAyQAWBiIAcQDRBSUA0QCpBSoA2QAOBC8A4QAjAzUAkQBXAzkA6QDIADkA4QAtAz0A
+0QD6BQEA8QDXBBAA8QC3BU0A6QBoAFYAAQGoA1wAcQDXBAYAkQDXBAYACQGoAGYACQEJBm8AmQDX
+BHUAuQDXBAYACAAUAI8ACAAYAJQAKQBzAAMBLgALANsALgATAOQALgAbAAMBLgAjAAwBLgArADUB
+LgAzADUBLgA7ADUBLgBDAAwBLgBLADsBLgBTADUBLgBbAFIBQwBjAJQASQBzAAMBYQB7AJQAYwBr
+AJQAGwBCAAMAAQAEAAMAAADHBMwAAAA5AdEAAADyBdYAAgAFAAMAAgAGAAUAAQAHAAUAAgAIAAcA
+BIAAAAEAAAA0I/hZAAAAAAAAAQAAAAQAAAAAAAAAAAAAAH0AXwAAAAAADwAAAAAAAAAAAAAAhgBg
+AwAAAAAEAAAAAAAAAAAAAAB9ABcEAAAAAA8AAAAAAAAAAAAAAIYAOAAAAAAAAAAAAAEAAAAoBQAA
+BQACAAAAAAAAU1RfNTcwMzRlMGM1ZWUwNDU4Mzk3ODY4MDEwODZjZmE4YjAAPE1vZHVsZT4AU3lz
+dGVtLklPAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuTWFuYWdlZERUUwB2YWx1ZV9fAG1zY29ybGliAGdl
+dF9MYXN0V3JpdGVUaW1lVXRjAGRlZmF1bHRJbnN0YW5jZQBWYXJpYWJsZQBSdW50aW1lVHlwZUhh
+bmRsZQBHZXRUeXBlRnJvbUhhbmRsZQBHZXRMYXRlc3RGaWxlAGdldF9GdWxsTmFtZQBkaXJlY3Rv
+cnlOYW1lAERhdGVUaW1lAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlJ1bnRpbWUAVHlwZQBGYWls
+dXJlAGdldF9DdWx0dXJlAHNldF9DdWx0dXJlAHJlc291cmNlQ3VsdHVyZQBWU1RBUlRTY3JpcHRP
+YmplY3RNb2RlbEJhc2UAQXBwbGljYXRpb25TZXR0aW5nc0Jhc2UARWRpdG9yQnJvd3NhYmxlU3Rh
+dGUAQ29tcGlsZXJHZW5lcmF0ZWRBdHRyaWJ1dGUARGVidWdnZXJOb25Vc2VyQ29kZUF0dHJpYnV0
+ZQBEZWJ1Z2dhYmxlQXR0cmlidXRlAEVkaXRvckJyb3dzYWJsZUF0dHJpYnV0ZQBBc3NlbWJseVRp
+dGxlQXR0cmlidXRlAEFzc2VtYmx5VHJhZGVtYXJrQXR0cmlidXRlAFRhcmdldEZyYW1ld29ya0F0
+dHJpYnV0ZQBBc3NlbWJseUNvbmZpZ3VyYXRpb25BdHRyaWJ1dGUAQXNzZW1ibHlEZXNjcmlwdGlv
+bkF0dHJpYnV0ZQBDb21waWxhdGlvblJlbGF4YXRpb25zQXR0cmlidXRlAEFzc2VtYmx5UHJvZHVj
+dEF0dHJpYnV0ZQBBc3NlbWJseUNvcHlyaWdodEF0dHJpYnV0ZQBTU0lTU2NyaXB0VGFza0VudHJ5
+UG9pbnRBdHRyaWJ1dGUAQXNzZW1ibHlDb21wYW55QXR0cmlidXRlAFJ1bnRpbWVDb21wYXRpYmls
+aXR5QXR0cmlidXRlAGdldF9WYWx1ZQBzZXRfVmFsdWUAdmFsdWUAU3lzdGVtLlJ1bnRpbWUuVmVy
+c2lvbmluZwBUb1N0cmluZwBNaWNyb3NvZnQuU3FsU2VydmVyLlNjcmlwdFRhc2sATWljcm9zb2Z0
+LlNxbFNlcnZlci5EdHMuVGFza3MuU2NyaXB0VGFzawBvcF9HcmVhdGVyVGhhbk9yRXF1YWwAU2Ny
+aXB0T2JqZWN0TW9kZWwAU3lzdGVtLkNvbXBvbmVudE1vZGVsAFNUXzU3MDM0ZTBjNWVlMDQ1ODM5
+Nzg2ODAxMDg2Y2ZhOGIwLmRsbABnZXRfSXRlbQBTeXN0ZW0ARW51bQByZXNvdXJjZU1hbgBTY3Jp
+cHRNYWluAGZpbGVFeHRlbnNpb24AU3lzdGVtLkNvbmZpZ3VyYXRpb24AU3lzdGVtLkdsb2JhbGl6
+YXRpb24AU3lzdGVtLlJlZmxlY3Rpb24AU2VhcmNoT3B0aW9uAEZpbGVJbmZvAEN1bHR1cmVJbmZv
+AEZpbGVTeXN0ZW1JbmZvAERpcmVjdG9yeUluZm8AZ2V0X1Jlc291cmNlTWFuYWdlcgAuY3RvcgAu
+Y2N0b3IAU3lzdGVtLkRpYWdub3N0aWNzAFN5c3RlbS5SdW50aW1lLkNvbXBpbGVyU2VydmljZXMA
+U3lzdGVtLlJlc291cmNlcwBTVF81NzAzNGUwYzVlZTA0NTgzOTc4NjgwMTA4NmNmYThiMC5Qcm9w
+ZXJ0aWVzLlJlc291cmNlcy5yZXNvdXJjZXMARGVidWdnaW5nTW9kZXMAU1RfNTcwMzRlMGM1ZWUw
+NDU4Mzk3ODY4MDEwODZjZmE4YjAuUHJvcGVydGllcwBnZXRfVmFyaWFibGVzAEdldEZpbGVzAFNl
+dHRpbmdzAFN1Y2Nlc3MAZ2V0X0R0cwBTY3JpcHRSZXN1bHRzAE9iamVjdABnZXRfRGVmYXVsdABz
+ZXRfVGFza1Jlc3VsdABnZXRfQXNzZW1ibHkARW1wdHkAAD9OAGUAdwBfAFAAMgBQAF8ARgB1AG4A
+ZAByAGEAaQBzAGUAcgBfAGUAeABwAG8AcgB0AF8AKgAuAGMAcwB2AAAhVQBzAGUAcgA6ADoAUgBv
+AG8AdABGAG8AbABkAGUAcgAAF0MAdQByAHIAZQBuAHQARgBpAGwAZQAAcVMAVABfADUANwAwADMA
+NABlADAAYwA1AGUAZQAwADQANQA4ADMAOQA3ADgANgA4ADAAMQAwADgANgBjAGYAYQA4AGIAMAAu
+AFAAcgBvAHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUAcwAAAAAAi5lOkOHiWkGe/1L8
+XNoj/gAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERVQYHAw4OEj0CBg4EIAASaQQgABJtBSABEnEc
+AyAAHAMgAA4EIAEBHAoHBBI9HRI9CBI9CCACHRI9DhF9BSAAEYCBCQACAhGAgRGAgQgAARKAhRGA
+iQUgABKAjQcgAgEOEoCNCLd6XFYZNOCJCImEXc2AgMyRBAAAAAAEAQAAAAMGEk0DBhJRAwYSEAIG
+CAMGERQGAAISPQ4OBAAAEk0EAAASUQUAAQESUQQAABIQAwAAAQQIABJNBAgAElEECAASEAgBAAgA
+AAAAAB4BAAEAVAIWV3JhcE5vbkV4Y2VwdGlvblRocm93cwEIAQACAAAAAAAoAQAjU1RfNTcwMzRl
+MGM1ZWUwNDU4Mzk3ODY4MDEwODZjZmE4YjAAAAUBAAAAABYBABFDb3B5cmlnaHQgQCAgMjAyNAAA
+SQEAGi5ORVRGcmFtZXdvcmssVmVyc2lvbj12NC43AQBUDhRGcmFtZXdvcmtEaXNwbGF5TmFtZRIu
+TkVUIEZyYW1ld29yayA0Lje0AAAAzsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVzb3Vy
+Y2VSZWFkZXIsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVi
+bGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OSNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVSZXNv
+dXJjZVNldAIAAAAAAAAAAAAAAFBBRFBBRFC0AAAApC8AAAAAAAAAAAAAvi8AAAAgAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAALAvAAAAAAAAAAAAAAAAX0NvckRsbE1haW4AbXNjb3JlZS5kbGwAAAAAAP8l
+ACAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAABABAAAAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAA
+AABIAAAAWEAAABoEAAAAAAAAAAAAABoENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBP
+AAAAAAC9BO/+AAABAAAAAQD4WTQjAAABAPhZNCM/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAA
+RAAAAAEAVgBhAHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBv
+AG4AAAAAAAAAsAR6AwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAABWAwAAAQAwADAA
+MAAwADAANABiADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABh
+AG4AeQBOAGEAbQBlAAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4A
+AAAAAFMAVABfADUANwAwADMANABlADAAYwA1AGUAZQAwADQANQA4ADMAOQA3ADgANgA4ADAAMQAw
+ADgANgBjAGYAYQA4AGIAMAAAAD4ADwABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAA
+LgA5ADAAMQAyAC4AMgAzADAAMwAyAAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAA
+AFMAVABfADUANwAwADMANABlADAAYwA1AGUAZQAwADQANQA4ADMAOQA3ADgANgA4ADAAMQAwADgA
+NgBjAGYAYQA4AGIAMAAuAGQAbABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0
+AAAAQwBvAHAAeQByAGkAZwBoAHQAIABAACAAIAAyADAAMgA0AAAAKgABAAEATABlAGcAYQBsAFQA
+cgBhAGQAZQBtAGEAcgBrAHMAAAAAAAAAAAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBu
+AGEAbQBlAAAAUwBUAF8ANQA3ADAAMwA0AGUAMABjADUAZQBlADAANAA1ADgAMwA5ADcAOAA2ADgA
+MAAxADAAOAA2AGMAZgBhADgAYgAwAC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBt
+AGUAAAAAAFMAVABfADUANwAwADMANABlADAAYwA1AGUAZQAwADQANQA4ADMAOQA3ADgANgA4ADAA
+MQAwADgANgBjAGYAYQA4AGIAMAAAAEIADwABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAA
+ADEALgAwAC4AOQAwADEAMgAuADIAMwAwADMAMgAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAA
+VgBlAHIAcwBpAG8AbgAAADEALgAwAC4AOQAwADEAMgAuADIAMwAwADMAMgAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAwAAADQPwAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
+        </ScriptProject>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{79AB7BC3-7AD6-4256-8317-66026F4EA9CB}"
+      DTS:From="Package\Script Task 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\P2P Fundraiser File" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{E3B3501F-54F2-433E-A1F9-8CEEEA6CC33A}"
+      DTS:From="Package\P2P Fundraiser File"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\last_update_date" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="163,42"
+          Id="Package\last_update_date"
+          TopLeft="221,408" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\P2P Fundraiser File"
+          TopLeft="216,258" />
+        <NodeLayout
+          Size="143,42"
+          Id="Package\Script Task 1"
+          TopLeft="234,116" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="304.75,158">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,100"
+              Start="0,0"
+              End="0,92.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,92.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="303.25,300">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,108"
+              Start="0,0"
+              End="0,100.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,100.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\P2P Fundraiser File">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="177,42"
+          Id="Package\P2P Fundraiser File\OLE DB Destination"
+          TopLeft="501,278" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\P2P Fundraiser File\Flat File Source"
+          TopLeft="511,145" />
+        <EdgeLayout
+          Id="Package\P2P Fundraiser File.Paths[Flat File Source Output]"
+          TopLeft="589.25,187">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,91"
+              Start="0,0"
+              End="0,83.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,83.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\P2P Fundraiser File\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

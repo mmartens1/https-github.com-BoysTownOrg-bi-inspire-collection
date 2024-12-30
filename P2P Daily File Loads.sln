@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.35130.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "P2P Daily File Loads", "P2P Daily File Loads\P2P Daily File Loads.dtproj", "{A64DFF45-4B40-4338-9FD2-340B811B0BD8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A64DFF45-4B40-4338-9FD2-340B811B0BD8}.Development|Default.ActiveCfg = Development
+		{A64DFF45-4B40-4338-9FD2-340B811B0BD8}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BE689176-4481-4260-961D-662DEC5D3E13}
+	EndGlobalSection
+EndGlobal
